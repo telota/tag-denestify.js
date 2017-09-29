@@ -16,14 +16,14 @@ Flatten nested tags onto one level.
 
 ```
 
-#Installation
+# Installation
 Require this package using npm. Run the following command in the terminal:
 ```
 npm install tag-denestify
 
 ```
 
-#Usage
+# Usage
 To convert a string containing nested tags into a string with the 
 tags flattend onto one level use the following code:
 

@@ -1,0 +1,27 @@
+{
+  "name": "tag-denestify",
+  "version": "0.1.0",
+  "description": "Flatten nested tags onto one level ",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telota/tag-denestify.js.git"
+  },
+  "author": "TELOTA, Luisa Philipp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/telota/tag-denestify.js/issues"
+  },
+  "homepage": "https://github.com/telota/tag-denestify.js#readme",
+  "devDependencies": {
+    "ava": "^0.22.0"
+  },
+  "ava" : {
+    "files" : [
+      "test/*.js"
+    ]
+  }
+}

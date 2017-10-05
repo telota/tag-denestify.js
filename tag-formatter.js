@@ -63,10 +63,8 @@ getOpeningTagName = (tagElement) => {
 getClosingTagName = (tagElement) => {
     //if tagArray[i] is a closing tag
     let regClosing = new RegExp("<\\/|>")
-
     return tagElement.split(regClosing)[1];
-
-}
+};
 
 module.exports = {
     formatTagString: formatTagString

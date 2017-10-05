@@ -31,9 +31,17 @@ test("Testing with empty Tags", t=>{
 });
 
 test("Testing with same Tag-name but different Attributes", t=>{
-    /*t.is(formatTagString('<t class="a">Ha<t class="b">ll</t>o</t>'),
-        '<t class="a">Ha</t><t class="b">ll</t><t class="a">o</t>');*/
+    t.is(formatTagString('<t class="a">Ha<t class="b">ll</t>o</t>'),
+        '<t class="a">Ha</t><t class="b">ll</t><t class="a">o</t>');
 
     t.is(formatTagString('<t class="a">Ha<t class="b">ll<t class="c">o</t></t>World</t>'),
         '<t class="a">Ha</t><t class="b">ll</t><t class="c">o</t><t class="a">World</t>');
+});
+
+test("Testing with ignored Strings", t=>{
+    t.is(formatTagString('<w>Lo<del>rem</del></w><w><del>ip</del>sum</w>',["w"]),
+        '<w>Lo<del>rem</del></w><w><del>ip</del>sum</w>');
+
+    t.is(formatTagString("My <t>Hello <p>Wor<d>ld</d></p></t>",["t", "p"]),
+        "My <t>Hello <p>Wor<d>ld</d></p></t>");
 });

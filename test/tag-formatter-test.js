@@ -29,3 +29,11 @@ test("Testing with empty Tags", t=>{
     t.is(formatTagString("<t></t><t><d>Hello</d>World</t>"), "<d>Hello</d><t>World</t>");
     t.is(formatTagString("<t></t><t><d>Hello</d></t><a></a>"), "<d>Hello</d>");
 });
+
+test("Testing with same Tag-name but different Attributes", t=>{
+    /*t.is(formatTagString('<t class="a">Ha<t class="b">ll</t>o</t>'),
+        '<t class="a">Ha</t><t class="b">ll</t><t class="a">o</t>');*/
+
+    t.is(formatTagString('<t class="a">Ha<t class="b">ll<t class="c">o</t></t>World</t>'),
+        '<t class="a">Ha</t><t class="b">ll</t><t class="c">o</t><t class="a">World</t>');
+});

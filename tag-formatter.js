@@ -29,19 +29,20 @@ formatTagString = (string) => {
         }
 
         else if ((/<\/.*>/.test(contentArray[index]))) {
+            if (getOpeningTagName(contentArray[index - 2]) !== getClosingTagName(contentArray[index])) {
+                for (let j = wholeTagStringArray.length-1; j > -1; j--) {
 
-            for (let j = 0; j < wholeTagStringArray.length; j++) {
-
-                if (getOpeningTagName(wholeTagStringArray[j]) === getClosingTagName(contentArray[index])) {
-                    contentArray.splice(index - 1, 0, wholeTagStringArray[j]);
-                    wholeTagStringArray.splice(j, 1);
-                    index = index + 2;
+                    if (getOpeningTagName(wholeTagStringArray[j]) === getClosingTagName(contentArray[index])) {
+                        contentArray.splice(index - 1, 0, wholeTagStringArray[j]);
+                        wholeTagStringArray.splice(j, 1);
+                        index = index + 2;
+                    }
                 }
             }
         }
     }
-
     return contentArray.join("").replace(/<[^<|>]*><\/[^<|>]*>/g, "");
+
 };
 
 /**

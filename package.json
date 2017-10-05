@@ -1,6 +1,6 @@
 {
   "name": "tag-denestify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Flatten nested tags onto one level ",
   "main": "index.js",
   "scripts": {
